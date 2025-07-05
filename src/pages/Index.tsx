@@ -1,4 +1,3 @@
-
 import React, { useState, useCallback } from 'react';
 import MapView from '@/components/MapView';
 import ChatPanel from '@/components/ChatPanel';
@@ -220,9 +219,9 @@ const Index = () => {
   }, [toast]);
 
   return (
-    <div className="h-screen w-full flex bg-gray-100">
-      {/* Left Panel - Map (70% width on desktop) */}
-      <div className="flex-1 lg:w-[70%] p-2">
+    <div className="h-screen w-full flex flex-col lg:flex-row bg-gray-100">
+      {/* Left Panel - Map (70% width on desktop, full height on mobile) */}
+      <div className="flex-1 lg:w-[70%] h-1/2 lg:h-full p-2">
         <div className="h-full rounded-lg overflow-hidden shadow-lg">
           <MapView 
             layers={mapLayers}
@@ -231,8 +230,8 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Right Panel - Chat (30% width on desktop) */}
-      <div className="w-full lg:w-[30%] lg:max-w-md p-2">
+      {/* Right Panel - Chat (30% width on desktop, full height on mobile) */}
+      <div className="w-full lg:w-[30%] lg:max-w-md h-1/2 lg:h-full p-2">
         <div className="h-full rounded-lg overflow-hidden shadow-lg bg-white">
           <ChatPanel
             queries={queries}
@@ -243,24 +242,6 @@ const Index = () => {
           />
         </div>
       </div>
-
-      {/* Mobile responsive: Stack vertically on small screens */}
-      <style jsx>{`
-        @media (max-width: 1024px) {
-          .h-screen.w-full.flex {
-            flex-direction: column;
-          }
-          .flex-1.lg\\:w-\\[70\\%\\] {
-            height: 50vh;
-            width: 100%;
-          }
-          .w-full.lg\\:w-\\[30\\%\\] {
-            height: 50vh;
-            width: 100%;
-            max-width: none;
-          }
-        }
-      `}</style>
     </div>
   );
 };
