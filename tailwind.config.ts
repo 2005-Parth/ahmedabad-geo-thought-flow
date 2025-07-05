@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,19 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Geospatial theme colors
+				geo: {
+					water: '#2563eb',
+					'water-light': '#3b82f6',
+					forest: '#16a34a',
+					'forest-light': '#22c55e',
+					urban: '#6b7280',
+					'urban-light': '#9ca3af',
+					flood: '#dc2626',
+					'flood-light': '#ef4444',
+					park: '#15803d',
+					'park-light': '#16a34a'
 				}
 			},
 			borderRadius: {
@@ -84,11 +98,20 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-subtle': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.8'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite'
 			}
 		}
 	},
